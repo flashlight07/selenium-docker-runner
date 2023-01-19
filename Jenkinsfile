@@ -2,7 +2,12 @@ pipeline {
     // master executor should be set to 0
     agent any
     stages {
-        stage('Bring grid up') {
+        stage('Pull latest image') {
+            steps {
+                bat "docker pull ssomanpfpt/selenium-docker"
+            }
+        }
+		stage('Bring grid up') {
             steps {
                 bat "docker-compose up -d hub chrome firefox"
             }
