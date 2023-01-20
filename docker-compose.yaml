@@ -24,7 +24,7 @@ services:
       - SE_EVENT_BUS_HOST=hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-  search-module1:
+  search-module-1:
     image: ssomanpfpt/selenium-docker   
     depends_on:
       - chrome
@@ -34,8 +34,8 @@ services:
       - BROWSER=firefox
       - MODULE=search-module.xml
     volumes:
-      - ./output/search-result1:/usr/share/udemy/test-output
-  search-module2:
+      - ./output/search-result-1:/usr/share/udemy/test-output
+  search-module-2:
     image: ssomanpfpt/selenium-docker   
     depends_on:
       - chrome
@@ -45,8 +45,8 @@ services:
       - BROWSER=chrome
       - MODULE=search-module.xml
     volumes:
-      - ./output/search-result2:/usr/share/udemy/test-output
-  book-flight-module1:
+      - ./output/search-result-2:/usr/share/udemy/test-output
+  book-flight-module-1:
     image: ssomanpfpt/selenium-docker   
     depends_on:
       - chrome
@@ -56,8 +56,8 @@ services:
       - BROWSER=firefox
       - MODULE=book-flight-module.xml
     volumes:
-      - ./output/book-result1:/usr/share/udemy/test-output
-  book-flight-module2:
+      - ./output/book-result-1:/usr/share/udemy/test-output
+  book-flight-module-2:
     image: ssomanpfpt/selenium-docker   
     depends_on:
       - chrome
@@ -67,4 +67,4 @@ services:
       - BROWSER=chrome
       - MODULE=book-flight-module.xml
     volumes:
-      - ./output/book-result2:/usr/share/udemy/test-output
+      - ./output/book-result-2:/usr/share/udemy/test-output
